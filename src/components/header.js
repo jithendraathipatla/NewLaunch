@@ -23,35 +23,35 @@ const Header = () => {
           <ul>
             <img src={HomeSVG} alt="Home Svg" />
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" activeClassName="active">Home</Link>
             </li>
             <img src={AmenitiesSVG} alt="Home Svg" />{" "}
             <li>
-              <Link to="/overview">Overview</Link>
+              <Link to="/overview" activeClassName="active">Overview</Link>
             </li>
             <img src={LoaderSVG} alt="Home Svg" />
             <li>
-              <Link to="/configuration">Configuration</Link>
+              <Link to="/configuration" activeClassName="active">Configuration</Link>
             </li>
             <img src={ReadingSVG} alt="Home Svg" />{" "}
             <li>
-              <Link to="/gallery">Gallery</Link>
+              <Link to="/gallery" activeClassName="active">Gallery</Link>
             </li>
             <img src={SiteVisitSVG} alt="Home Svg" />
             <li>
-              <Link to="/masterplan">Master Plan</Link>
+              <Link to="/masterplan" activeClassName="active">Master Plan</Link>
             </li>
             <img src={PriceSVG} alt="Home Svg" />{" "}
             <li>
-              <Link to="/pricing">Pricing</Link>
+              <Link to="/pricing" activeClassName="active">Pricing</Link>
             </li>
             <img src={AmenitiesSVG} alt="Home Svg" />
             <li>
-              <Link to="/amenities">Amenities</Link>
+              <Link to="/amenities" activeClassName="active">Amenities</Link>
             </li>
             <img src={LocationSVG} alt="Home Svg" />
             <li css={last}>
-              <Link to="/location">Location</Link>
+              <Link to="/location" activeClassName="active">Location</Link>
             </li>
           </ul>
         </div>

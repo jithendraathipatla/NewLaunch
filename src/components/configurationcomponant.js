@@ -1,6 +1,6 @@
 import React from "react"
 import TitleComponent from "./titlecomponent"
-import Modal from "./modalcomponant"
+import {css} from '@emotion/core'
 import { Link } from "gatsby"
 
 const Tabel = () => {
@@ -23,7 +23,7 @@ const Tabel = () => {
           </tr>
         </thead>
 
-        <tbody>
+        <tbody css={bod}>
           <tr>
             <td rowSpan={4} style={{ fontSize: "18px", fontWeight: "500" }}>
               <br />
@@ -64,3 +64,13 @@ const Tabel = () => {
 }
 
 export default Tabel
+
+const bod = css`
+  a{
+    text-decoration:none;
+    :hover{
+      text-decoration: underline;
+      color:white;
+    }
+  }
+`

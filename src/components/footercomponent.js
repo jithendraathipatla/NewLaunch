@@ -48,7 +48,7 @@ const Location = () => {
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15551.365760983776!2d77.7421819!3d12.9819914!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc1e3bb2948afbff4!2sPrestige%20Waterford!5e0!3m2!1sen!2sin!4v1597550473653!5m2!1sen!2sin"
           width="100%"
-          height="451"
+          height="483"
           allowfullscreen=""
           aria-hidden="false"
           tabindex="0"

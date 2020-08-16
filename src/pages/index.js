@@ -144,7 +144,7 @@ const IndexPage = () => {
           ) : null}
         </div>
       </div>
-
+      <hr/>
       <div>
         <AmenititesComponant />
       </div>
