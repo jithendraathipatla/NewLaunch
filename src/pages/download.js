@@ -1,5 +1,5 @@
 import React from 'react';
-import SEOComponent from '../Components/seo';
+import SEOComponent from '../components/seo';
 
 const download = () => {
     return (
