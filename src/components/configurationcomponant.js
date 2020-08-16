@@ -1,6 +1,7 @@
 import React from "react"
 import TitleComponent from "./titlecomponent"
 import Modal from "./modalcomponant"
+import { Link } from "gatsby"
 
 const Tabel = () => {
   return (
@@ -32,28 +33,28 @@ const Tabel = () => {
           <tr>
             <td>3 BHK Small</td>
             <td>
-              <Modal title="Know More" class="modalbuttonsmall" />
+             <Link to="/contact"><a class="modalbuttonsmall"> Know More </a></Link> 
             </td>
             <td>
-              <Modal title="Know More" class="modalbuttonsmall" />
+               <Link to="/contact"><a class="modalbuttonsmall"> Know More </a></Link> 
             </td>
           </tr>
           <tr>
             <td>3 BHK Large</td>
             <td>
-              <Modal title="Know More" class="modalbuttonsmall" />
+               <Link to="/contact"><a class="modalbuttonsmall"> Know More </a></Link> 
             </td>
             <td>
-              <Modal title="Know More" class="modalbuttonsmall" />
+               <Link to="/contact"><a class="modalbuttonsmall"> Know More </a></Link> 
             </td>
           </tr>
           <tr>
             <td>4 BHk</td>
             <td>
-              <Modal title="Know More" class="modalbuttonsmall" />
+               <Link to="/contact"><a class="modalbuttonsmall"> Know More </a></Link> 
             </td>
             <td>
-              <Modal title="Know More" class="modalbuttonsmall" />
+               <Link to="/contact"><a class="modalbuttonsmall"> Know More </a></Link> 
             </td>
           </tr>
         </tbody>

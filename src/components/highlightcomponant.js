@@ -17,6 +17,8 @@ const HighlightFormTwo = () => {
           <h1>Prestige  Waterford</h1>
             <h4>Whitefield, Bangalore</h4>
             <h4>Exclusive Homes In Whitefield, Bangalore</h4>
+            <br/>
+          
             <span style={{backgroundColor: "#d4af37",
             background: "linear-gradient(-45deg, #826424, #d4af37 ,#826424,#d4af37)",
             backgroundSize: "400% 400%",
@@ -27,17 +29,16 @@ const HighlightFormTwo = () => {
                  <span className="animated bounceIn infinite" style={{display: "block", animationDuration:"3s"}}>Hurry! Limited Units</span>
                  <span className="animated_sub" style={{display: "block"}}>Make your Bookings now..</span>
              </span></span>
+             <br/>
              <h3>Luxury 3 &amp; 4 BHK Apartments</h3>
             <h3>₹ _ _ Lacs Onwards </h3>
             <br/>
+            
             <div style={{border:"1px solid white", textAlign:"center"}} className="rera">
              <h5 style={{textAlign:"center", color:"white"}}>RERA No:</h5>
              <h6>PRM/KA/RERA/1251/446/PR/200811/003528</h6>
             </div>
-             <br/>
-             <div style={{textAlign:"center"}}>
-             {/* <Modal title="Download Complete Details"  class="prestigecopy different"/> */}
-             </div>
+             
         </div>
     );
 };

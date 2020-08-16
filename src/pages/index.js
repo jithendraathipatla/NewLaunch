@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -8,19 +8,20 @@ import Firstcomponant from "../components/highlightcomponant"
 import Secondcomponant from "../components/highlightform"
 import Titlecomponent from "../components/titlecomponent"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
-import OverviewComponent from '../components/overviewcomponant'
-import Configirationcomponant from '../components/configurationcomponant'
-import AmenititesComponant from '../components/amenitiescomponant'
+import Img from "gatsby-image/withIEPolyfill"
+import OverviewComponent from "../components/overviewcomponant"
+import Configirationcomponant from "../components/configurationcomponant"
+import AmenititesComponant from "../components/amenitiescomponant"
 
 const IndexPage = () => {
+  const [isShown, setIsShown] = useState(false)
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(
         relativePath: { eq: "prestige-waterford-banner.jpg" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 300, maxHeight:220) {
+          fluid(maxWidth: 300, maxHeight: 220) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }
@@ -29,35 +30,16 @@ const IndexPage = () => {
         relativePath: { eq: "prestige-waterford-masterplan.jpg" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 900, maxHeight:500) {
+          fluid(maxWidth: 900, maxHeight: 500) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }
       }
-      floorplanOne: file(
-        relativePath: { eq: "floorplan1.jpeg" }
-      ) {
+
+      floorplanThree: file(relativePath: { eq: "floorplan3.jpeg" }) {
         childImageSharp {
-          fluid(maxWidth: 900, maxHeight:500) {
-            ...GatsbyImageSharpFluid_withWebp_tracedSVG
-          }
-        }
-      }
-      floorplanTwo: file(
-        relativePath: { eq: "floorplan2.jpeg" }
-      ) {
-        childImageSharp {
-          fluid(maxWidth: 1000, maxHeight:1200) {
-            ...GatsbyImageSharpFluid_withWebp_tracedSVG
-          }
-        }
-      }
-      floorplanThree: file(
-        relativePath: { eq: "floorplan3.jpeg" }
-      ) {
-        childImageSharp {
-          fluid(maxWidth: 900, maxHeight:500) {
-            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          fixed(width: 1200, height: 600) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
@@ -86,9 +68,12 @@ const IndexPage = () => {
         </div>
         <div css={overview}>
           <div>
-            <Img fluid={data.placeholderImage.childImageSharp.fluid} alt="Waterford Image" />
+            <Img
+              fluid={data.placeholderImage.childImageSharp.fluid}
+              alt="Waterford Image"
+            />
           </div>
-          <div style={{textAlign:'justify'}}>
+          <div style={{ textAlign: "justify" }}>
             <span>
               Prestige Group presents Prestige Waterford at Whitefield,a
               flourishing suburb of Bangalore. Made by the best of
@@ -113,40 +98,57 @@ const IndexPage = () => {
           </div>
         </div>
       </div>
-    <br/>
-    <hr/>
-    <div>
-      <OverviewComponent/>
-    </div>
-    <hr/>
-    <div>
-      <Configirationcomponant/>
-    </div>
-    <hr/>
-    <div  style={{textAlign:'center'}}>
-      <div style={{textAlign:'center'}}>
-        <Titlecomponent title="Waterford Masterplan"/>
+      <br />
+      <hr />
+      <div>
+        <OverviewComponent />
       </div>
-      <Img fluid={data.masterPlan.childImageSharp.fluid} alt="Waterford Image" />
-    </div>
-    <hr/>
-    <div>
-      <div style={{textAlign:"center"}}>
-        <Titlecomponent title="FloorPlans"/>
+      <hr />
+      <div>
+        <Configirationcomponant />
       </div>
-      <div css={floorplans}>
-      <Img fluid={data.floorplanOne.childImageSharp.fluid} alt="Waterford Image" />
-      <hr/>
-      <Img fluid={data.floorplanTwo.childImageSharp.fluid} alt="Waterford Image" />
-      <hr/>
-      <Img fluid={data.floorplanThree.childImageSharp.fluid} alt="Waterford Image" />
+      <hr />
+      <div style={{ textAlign: "center" }}>
+        <div style={{ textAlign: "center" }}>
+          <Titlecomponent title="Waterford Masterplan" />
+        </div>
+        <Img
+          fluid={data.masterPlan.childImageSharp.fluid}
+          alt="Waterford Image"
+        />
       </div>
-    </div>
-    <hr/>
-    <div>
-      <AmenititesComponant/>
-    </div>
-    <hr/>
+      <hr />
+      <div>
+        <div style={{ textAlign: "center" }}>
+          <Titlecomponent title="FloorPlans" />
+        </div>
+        <div
+          css={isShown === true ? floorplansa : floorplans }
+          onMouseEnter={() => setIsShown(true)}
+          onMouseLeave={() => setIsShown(false)}
+        >
+          <Img
+            fixed={data.floorplanThree.childImageSharp.fixed}
+            alt="Waterford Image"
+            objectFit="cover"
+            objectPosition="50% 50%"
+            onMouseEnter={() => setIsShown(true)}
+            onMouseLeave={() => setIsShown(false)}
+          />
+          {isShown === true ? (
+            <Link to="/contact" css={knowmore}>
+              <button title="Know More" class="prestigecopyabcd">
+                Know More
+              </button>
+            </Link>
+          ) : null}
+        </div>
+      </div>
+
+      <div>
+        <AmenititesComponant />
+      </div>
+      <hr />
     </Layout>
   )
 }
@@ -154,17 +156,41 @@ const IndexPage = () => {
 export default IndexPage
 
 const floorplans = css`
- display: block;
+  display: block;
+  position: relative;
+  padding-top: 20px;
+  text-align: center;
+  img {
+    :hover {
+      cursor: pointer;
+      opacity: 0.2 !important;
+    }
+  }
+`
+const floorplansa = css`
+  display: block;
+  position: relative;
+  padding-top: 20px;
+  text-align: center;
+  img {
+    opacity: 0.2 !important;
+  }
+`
+
+const knowmore = css`
+  left: 50%;
+  margin-top: 15%;
+  position: absolute;
 `
 
 const overview = css`
-  padding:0px 40px;
+  padding: 0px 40px;
   display: grid;
-  grid-gap:30px;
-  grid-template-columns:4fr 8fr;
-  span{
-   line-height:25px;
-   font-size:18px;
+  grid-gap: 30px;
+  grid-template-columns: 4fr 8fr;
+  span {
+    line-height: 25px;
+    font-size: 18px;
   }
 `
 
@@ -175,6 +201,7 @@ const twoone = css`
   border-radius: 5px;
   text-align: justify;
   margin-left: 25px;
+  height: 370px;
 `
 
 const twotwo = css`
