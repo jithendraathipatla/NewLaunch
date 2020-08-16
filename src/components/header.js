@@ -94,6 +94,9 @@ padding-right:0px !important;
 `
 
 const list = css`
+   @media(max-width:600px){
+     display:none;
+   }
   ul {
     display: flex;
     list-style-type: none;

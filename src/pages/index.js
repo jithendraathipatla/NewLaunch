@@ -47,7 +47,7 @@ const IndexPage = () => {
   `)
   return (
     <Layout>
-      <SEO title="Prestige Waterford" />
+      <SEO title="Prestige Waterford | ITPL | Brochure" />
       <div
         css={one}
         style={{ maxWidth: `100%`, marginBottom: `1.45rem`, marginTop: `50px` }}

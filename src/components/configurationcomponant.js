@@ -1,6 +1,6 @@
 import React from "react"
 import TitleComponent from "./titlecomponent"
-import {css} from '@emotion/core'
+import { css } from "@emotion/core"
 import { Link } from "gatsby"
 
 const Tabel = () => {
@@ -33,28 +33,40 @@ const Tabel = () => {
           <tr>
             <td>3 BHK Small</td>
             <td>
-             <Link to="/contact"><a class="modalbuttonsmall"> Know More </a></Link> 
+              <Link to="/contact">
+                <a class="modalbuttonsmall"> Know More </a>
+              </Link>
             </td>
             <td>
-               <Link to="/contact"><a class="modalbuttonsmall"> Know More </a></Link> 
+              <Link to="/contact">
+                <a class="modalbuttonsmall"> Know More </a>
+              </Link>
             </td>
           </tr>
           <tr>
             <td>3 BHK Large</td>
             <td>
-               <Link to="/contact"><a class="modalbuttonsmall"> Know More </a></Link> 
+              <Link to="/contact">
+                <a class="modalbuttonsmall"> Know More </a>
+              </Link>
             </td>
             <td>
-               <Link to="/contact"><a class="modalbuttonsmall"> Know More </a></Link> 
+              <Link to="/contact">
+                <a class="modalbuttonsmall"> Know More </a>
+              </Link>
             </td>
           </tr>
           <tr>
             <td>4 BHk</td>
             <td>
-               <Link to="/contact"><a class="modalbuttonsmall"> Know More </a></Link> 
+              <Link to="/contact">
+                <a class="modalbuttonsmall"> Know More </a>
+              </Link>
             </td>
             <td>
-               <Link to="/contact"><a class="modalbuttonsmall"> Know More </a></Link> 
+              <Link to="/contact">
+                <a class="modalbuttonsmall"> Know More </a>
+              </Link>
             </td>
           </tr>
         </tbody>
@@ -66,11 +78,11 @@ const Tabel = () => {
 export default Tabel
 
 const bod = css`
-  a{
-    text-decoration:none;
-    :hover{
+  a {
+    text-decoration: none;
+    :hover {
       text-decoration: underline;
-      color:white;
+      color: white;
     }
   }
 `
