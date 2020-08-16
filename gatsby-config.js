@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Whitefield, Bangalore`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `Prestige Waterford is an Upcoming project by Prestige Group at Bangalore. Get the updated Details of Prestige Waterford price, review, Location, and Contact Us Booking Assistance.`,
+    author: `@jithendraathipatla`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
