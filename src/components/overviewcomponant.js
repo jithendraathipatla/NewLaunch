@@ -19,37 +19,37 @@ const StatefulOverview = () => {
     },
     {
       main_title: "Total Land Area",
-      sub_heading: "Comming Soon",
+      sub_heading: "22 Acer",
       image: TotalLandArea,
     },
     {
       main_title: "Total Units",
-      sub_heading: "Comming Soon",
+      sub_heading: "689 Units",
       image: TotalUnits,
     },
     {
       main_title: "Number Of Floors",
-      sub_heading: "Comming Soon",
+      sub_heading: "G + 21/24",
       image: NumberOfFloors,
     },
     {
       main_title: "Total Towers",
-      sub_heading: "Comming Soon",
+      sub_heading: "7 Towers",
       image: TotalTowers,
     },
     {
       main_title: "Unit Varients",
-      sub_heading: "Comming Soon",
+      sub_heading: "1,3 & 4 BHK",
       image: UnitVarients,
     },
     {
       main_title: "Possession Date",
-      sub_heading: "Comming Soon",
+      sub_heading: "Dec 2023",
       image: PossessionDate,
     },
     {
       main_title: "Location",
-      sub_heading: "Comming Soon",
+      sub_heading: "Whitefield, Bangalore",
       image: Location,
     },
   ])

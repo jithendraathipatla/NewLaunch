@@ -30,7 +30,7 @@ const HighlightFormTwo = () => {
                  <span className="animated_sub" style={{display: "block"}}>Make your Bookings now..</span>
              </span></span>
              <br/>
-             <h3>Luxury 3 &amp; 4 BHK Apartments</h3>
+             <h3>Luxury 1,3 &amp; 4 BHK Apartments</h3>
             <h3>₹ _ _ Lacs Onwards </h3>
             <br/>
             

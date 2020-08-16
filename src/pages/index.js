@@ -120,7 +120,7 @@ const IndexPage = () => {
       <hr />
       <div>
         <div style={{ textAlign: "center" }}>
-          <Titlecomponent title="FloorPlans" />
+          <Titlecomponent title="Floor Plans" />
         </div>
         <div
           css={isShown === true ? floorplansa : floorplans }
