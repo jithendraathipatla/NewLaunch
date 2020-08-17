@@ -6,7 +6,13 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-emotion`,
+    `gatsby-plugin-emotion`, {
+    resolve: `gatsby-plugin-google-analytics`,
+    options: {
+      trackingId: "UA-155154594-9",
+      head: true,
+    },
+  },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
