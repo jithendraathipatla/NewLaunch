@@ -74,15 +74,9 @@ const Sidemenu = props => {
       phonenumber: phoneone,
       PropertyName: "Prestige  Waterford",
     }
-    var data = {
-      service_id: "gmail",
-      template_id: "normal",
-      user_id: "user_s9VasukllOwTDnR8R0FWD",
-      template_params: finalformdata,
-    }
-
+   
     axios
-      .post("https://api.emailjs.com/api/v1.0/email/send", data)
+      .post("https://wmy59z5nb1.execute-api.us-east-1.amazonaws.com/prod/send_email_to_livexcellence", finalformdata)
       .then(res => {
         console.log(res)
         console.log(res.data)
@@ -102,15 +96,10 @@ const Sidemenu = props => {
       phonenumber: phonetwo,
       PropertyName: "Prestige  Waterford",
     }
-    var data = {
-      service_id: "gmail",
-      template_id: "normal",
-      user_id: "user_s9VasukllOwTDnR8R0FWD",
-      template_params: finalformdata,
-    }
+   
 
     axios
-      .post("https://api.emailjs.com/api/v1.0/email/send", data)
+      .post("https://wmy59z5nb1.execute-api.us-east-1.amazonaws.com/prod/send_email_to_livexcellence", finalformdata)
       .then(res => {
         console.log(res)
         console.log(res.data)

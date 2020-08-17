@@ -16,14 +16,9 @@ const HighlightForm = () => {
             client_phone:phone,
             project_name:"Prestige Waterford"
         }
-        var data = {
-            service_id: 'gmail',
-            template_id: 'normal',
-            user_id: 'user_s9VasukllOwTDnR8R0FWD',
-            template_params: client_information,
-        }
+       
       
-        axios.post('https://api.emailjs.com/api/v1.0/email/send',  data )
+        axios.post('https://wmy59z5nb1.execute-api.us-east-1.amazonaws.com/prod/send_email_to_livexcellence',  client_information )
         .then(res => {
           console.log(res);
           console.log(res.data);
