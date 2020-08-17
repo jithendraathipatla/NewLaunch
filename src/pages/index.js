@@ -13,6 +13,7 @@ import OverviewComponent from "../components/overviewcomponant"
 import Configirationcomponant from "../components/configurationcomponant"
 import AmenititesComponant from "../components/amenitiescomponant"
 
+
 const IndexPage = () => {
   const [isShown, setIsShown] = useState(false)
   const data = useStaticQuery(graphql`
@@ -64,7 +65,7 @@ const IndexPage = () => {
           <Secondcomponant />
         </div>
       </div>
-      <div style={{ marginTop: "-20px" }}>
+      <div css={fix} style={{ marginTop: "-20px" }}>
         <div style={{ textAlign: "center" }}>
           <Titlecomponent title="About Preigewaterford" />
         </div>
@@ -155,6 +156,12 @@ const IndexPage = () => {
 
 export default IndexPage
 
+const fix = css`
+  @media(max-width:600px){
+    margin-top: 250px !important;
+  }
+`
+
 const floorplans = css`
   display: block;
   position: relative;
@@ -212,8 +219,8 @@ const twoone = css`
   margin-left: 25px;
   height: 370px;
   @media(max-width:600px){
-    height: 360px;
-    width: 278px;
+    height: 295px;
+    width: 310px;
     margin-top: -30px;
 
   }
