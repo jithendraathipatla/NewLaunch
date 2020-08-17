@@ -1,76 +1,89 @@
-import React from 'react';
-import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import Button from '@material-ui/core/Button';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import React from "react"
+import clsx from "clsx"
+import { makeStyles } from "@material-ui/core/styles"
+import SwipeableDrawer from "@material-ui/core/SwipeableDrawer"
+import { Link } from "gatsby"
+import List from "@material-ui/core/List"
+import Divider from "@material-ui/core/Divider"
+import ListItem from "@material-ui/core/ListItem"
+import ListItemText from "@material-ui/core/ListItemText"
+import {css} from '@emotion/core'
+import HomeSVG from "../images/svg/home.svg"
+import LoaderSVG from "../images/svg/loader.svg"
+import ReadingSVG from "../images/svg/reading-library-2.svg"
+import SiteVisitSVG from "../images/svg/site-visit.svg"
+import PriceSVG from "../images/svg/price.svg"
+import AmenitiesSVG from "../images/svg/amenities.svg"
+import LocationSVG from "../images/svg/location.svg"
+import { FaBars } from "react-icons/fa"
 
 const useStyles = makeStyles({
   list: {
     width: 250,
   },
   fullList: {
-    width: 'auto',
+    width: "auto",
   },
-});
+})
 
 export default function SwipeableTemporaryDrawer() {
-  const classes = useStyles();
+  const classes = useStyles()
   const [state, setState] = React.useState({
     top: false,
     left: false,
     bottom: false,
     right: false,
-  });
+  })
 
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-      return;
+  const toggleDrawer = (anchor, open) => event => {
+    if (
+      event &&
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return
     }
 
-    setState({ ...state, [anchor]: open });
-  };
+    setState({ ...state, [anchor]: open })
+  }
 
-  const list = (anchor) => (
-    <div
+  const list = anchor => (
+    <div css={main}
       className={clsx(classes.list, {
-        [classes.fullList]: anchor === 'top' || anchor === 'bottom',
+        [classes.fullList]: anchor === "top" || anchor === "bottom",
       })}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+        {[
+          { name: "Home", link: "/"},
+          { name: "Overview", link: "/overview"},
+          { name: "Configuration", link: "/configuration"},
+          { name: "Gallery", link: "/gallery"},
+          { name: "MasterPlan", link: "/masterplan"},
+          { name: "Amenities", link: "/amenities"},
+          { name: "Pricing", link: "/pricing"},
+          { name: "Location", link: "/location"},
+        ].map((text, index) => (
           <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
+          <Link to={text.link}><ListItemText primary={text.name} /></Link>   
           </ListItem>
         ))}
       </List>
       <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
     </div>
-  );
+  )
 
   return (
     <div>
-      {['left', 'right', 'top', 'bottom'].map((anchor) => (
+      {["left"].map(anchor => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+          <FaBars
+            onClick={toggleDrawer(anchor, true)}
+            style={{ marginLeft: "20px" }}
+          />
           <SwipeableDrawer
             anchor={anchor}
             open={state[anchor]}
@@ -82,5 +95,19 @@ export default function SwipeableTemporaryDrawer() {
         </React.Fragment>
       ))}
     </div>
-  );
+  )
 }
+
+
+const main = css`
+ ul{
+  a{
+    text-decoration: none;
+    color:black;
+    font-size:18px;
+    :hover{
+      text-decoration: underline;
+    }
+  }
+ }
+`

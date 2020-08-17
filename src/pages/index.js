@@ -26,6 +26,7 @@ const IndexPage = () => {
           }
         }
       }
+
       masterPlan: file(
         relativePath: { eq: "prestige-waterford-masterplan.jpg" }
       ) {
@@ -38,13 +39,14 @@ const IndexPage = () => {
 
       floorplanThree: file(relativePath: { eq: "floorplan3.jpeg" }) {
         childImageSharp {
-          fixed(width: 1200, height: 600) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 1200, maxHeight: 600) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }
       }
     }
   `)
+
   return (
     <Layout>
       <SEO title="Prestige Waterford | ITPL | Brochure" />
@@ -123,15 +125,13 @@ const IndexPage = () => {
           <Titlecomponent title="Floor Plans" />
         </div>
         <div
-          css={isShown === true ? floorplansa : floorplans }
+          css={isShown === true ? floorplansa : floorplans}
           onMouseEnter={() => setIsShown(true)}
           onMouseLeave={() => setIsShown(false)}
         >
           <Img
-            fixed={data.floorplanThree.childImageSharp.fixed}
+            fluid={data.floorplanThree.childImageSharp.fluid}
             alt="Waterford Image"
-            objectFit="cover"
-            objectPosition="50% 50%"
             onMouseEnter={() => setIsShown(true)}
             onMouseLeave={() => setIsShown(false)}
           />
@@ -144,7 +144,7 @@ const IndexPage = () => {
           ) : null}
         </div>
       </div>
-      <hr/>
+      <hr />
       <div>
         <AmenititesComponant />
       </div>
@@ -179,8 +179,13 @@ const floorplansa = css`
 
 const knowmore = css`
   left: 50%;
-  margin-top: 15%;
+  margin-top: -27%;
   position: absolute;
+  @media(max-width:600px){
+    left: 36%;
+    margin-top: -34%;
+    position: absolute;
+  }
 `
 
 const overview = css`
@@ -192,6 +197,10 @@ const overview = css`
     line-height: 25px;
     font-size: 18px;
   }
+  @media (max-width: 600px) {
+    display: block;
+    padding: 0px 10px;
+}
 `
 
 const twoone = css`
@@ -202,6 +211,12 @@ const twoone = css`
   text-align: justify;
   margin-left: 25px;
   height: 370px;
+  @media(max-width:600px){
+    height: 295px;
+    width: 278px;
+    margin-top: -30px;
+
+  }
 `
 
 const twotwo = css`
@@ -210,6 +225,9 @@ const twotwo = css`
   width: 300px;
   height: 330px;
   margin-top: 35px;
+  @media (max-width: 600px) {
+    display: none;
+  }
 `
 
 const one = css`

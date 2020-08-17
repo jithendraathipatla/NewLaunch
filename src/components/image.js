@@ -23,10 +23,28 @@ const Image = () => {
           }
         }
       }
+      placeholderImagemobile: file(
+        relativePath: { eq: "prestige-waterford-banner.jpg" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 300, maxHeight: 450) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          }
+        }
+      } 
+
     }
   `)
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+
+  const Floorplansources = [
+    data.placeholderImagemobile.childImageSharp.fluid,{
+      ...data.placeholderImage.childImageSharp.fluid,
+      media: `(min-width:768px)`
+    }
+  ]
+
+  return <Img fluid={Floorplansources} />
 }
 
 export default Image
