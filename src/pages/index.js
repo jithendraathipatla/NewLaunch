@@ -65,7 +65,7 @@ const IndexPage = () => {
           <Secondcomponant />
         </div>
       </div>
-      <div css={fix} style={{ marginTop: "-20px" }}>
+      <div  style={{ marginTop: "-20px" }}>
         <div style={{ textAlign: "center" }}>
           <Titlecomponent title="About Preigewaterford" />
         </div>
@@ -156,11 +156,7 @@ const IndexPage = () => {
 
 export default IndexPage
 
-const fix = css`
-  @media(max-width:600px){
-    margin-top: 250px !important;
-  }
-`
+
 
 const floorplans = css`
   display: block;
