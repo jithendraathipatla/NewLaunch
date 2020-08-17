@@ -242,5 +242,8 @@ const two = css`
   justify-content: space-between;
   @media(max-width:600px){
     min-height:400px;
+    img{
+      height:400px;
+    }
   }
 `
