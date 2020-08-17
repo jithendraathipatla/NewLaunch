@@ -27,7 +27,7 @@ const Image = () => {
         relativePath: { eq: "prestige-waterford-banner.jpg" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 300, maxHeight: 450) {
+          fluid(maxWidth: 300, maxHeight: 400) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }

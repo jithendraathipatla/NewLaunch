@@ -212,7 +212,7 @@ const twoone = css`
   margin-left: 25px;
   height: 370px;
   @media(max-width:600px){
-    height: 295px;
+    height: 360px;
     width: 278px;
     margin-top: -30px;
 
@@ -240,4 +240,7 @@ const two = css`
   display: flex;
   width: 100%;
   justify-content: space-between;
+  @media(max-width:600px){
+    min-height:400px;
+  }
 `
